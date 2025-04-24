@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventverse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Gabarito:wght@400..900&family=Orelega+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+
+
+  <nav class="bg-black p-3 px-6 flex justify-between items-center  z-50 relative" x-data="{ open: false }">
+    <div class="text-3xl text-yellow-400">LUXORA</div>
+  
+    <!-- Desktop Menu -->
+    <ul class="text-2xl hidden md:flex space-x-8">
+      <li><a href="./home.html" class="text-yellow-500 hover:text-yellow-300">Home</a></li>
+      <li><a href="#" class="text-yellow-500 hover:text-yellow-300">Booking</a></li>
+      <li><a href="#" class="bg-yellow-400 text-black px-4 py-2 rounded">Login</a></li>
+      <li><a href="./register.html" class="bg-yellow-400 text-black px-4 py-2 rounded">Register</a></li>
+      <li><a href="./contact.html" class="text-yellow-500 hover:text-yellow-300">Contact</a></li>
+    </ul>
+  
+
+</nav>
+          
+          <style>
+            *{
+        font-family: "Orelega One", serif;
+        
+
+      }
+      
+      a{
+            text-decoration: none;
+           color: rgb(234, 161, 15);
+
+        
+
+ 
+        }
+      
+      
+       
+   nav{
+            position: sticky;
+            top: 0;
+        }
+        nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+
+.footer-mid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 30px;
+  background-color: #000;
+}
+
+.footer-logo {
+  flex: 1 1 30%;
+  text-align: center;
+  
+  font-family: "Orelega One", serif;
+  font-weight: normal;
+}
+
+.footer-logo h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.footer-logo .highlight {
+  color: rgb(234, 161, 15);
+  font-weight: bold;
+}
+
+.footer-logo a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-logo a:hover {
+  color: #fff;
+}
+
+.social-section {
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-links {
+  flex: 1 1 30%;
+  background-color: #000;
+}
+
+.footer-links h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  background-color: #000;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  background-color: #000;
+}
+
+.footer-links ul li {
+  margin: 8px 0;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+  color: #e4b825;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+ 
+  padding-bottom: 30px;
+  font-size: 14px;
+  color: #ffcc00;
+  background-color: #000;
+}
+
+
+
+          </style>
+          
+
+  <div class="min-h-screen flex flex-col md:flex-row items-start justify-center p-8 gap-10">
+    
+    <!-- Left: Product Section -->
+    <div class="w-full md:w-1/2 bg-zinc-900 p-6 rounded-lg shadow-lg">
+      
+      <!-- Carousel with Slide Titles -->
+      <div x-data="{ slide: 1, total: 3 }" class="relative group">
+        
+        <!-- Dynamic Slide Title -->
+        <div class="text-xl mb-4 text-yellow-400 text-center">
+          <template x-if="slide === 1">
+            <h2>Annual Conference</h2>
+          </template>
+          <template x-if="slide === 2">
+            <h2>Workshop Series</h2>
+          </template>
+          <template x-if="slide === 3">
+            <h2>Party Mixer</h2>
+          </template>
+        </div>
+
+        <!-- Slides -->
+        <div class="overflow-hidden rounded-lg">
+          <template x-if="slide === 1">
+            <img src="https://th.bing.com/th/id/R.6804ad5233400efe7ca11dcc5b0bd8e6?rik=BBPf%2bSAIxTnp0Q&riu=http%3a%2f%2fssr.org%2fwp-content%2fuploads%2f2023%2f12%2fAJ7I0245-scaled.jpg&ehk=mDnbsAkrNpws58RBE%2f5OkMioU7IMLfS7a5jax5tFcc0%3d&risl=&pid=ImgRaw&r=0" />
+          </template>
+          <template x-if="slide === 2">
+            <img src="https://socio.events/wp-content/uploads/2022/04/AdobeStock_67735418.jpeg" alt="Slide 2" class="w-full rounded" />
+          </template>
+          <template x-if="slide === 3">
+            <img src="https://thumbs.dreamstime.com/b/professional-dj-music-mixer-party-electronic-concert-179290745.jpg" alt="Slide 3" class="w-full rounded" />
+          </template>
+        </div>
+
+        <!-- Left Arrow -->
+        <button
+          @click="slide = slide === 1 ? total : slide - 1"
+          class="absolute top-1/2 left-4 -translate-y-1/2 hidden group-hover:flex items-center justify-center w-14 h-14 bg-white text-black text-3xl rounded-full shadow-md transition"
+        >
+          &#8592;
+        </button>
+
+        <!-- Right Arrow -->
+        <button
+          @click="slide = slide === total ? 1 : slide + 1"
+          class="absolute top-1/2 right-4 -translate-y-1/2 hidden group-hover:flex items-center justify-center w-14 h-14 bg-white text-black text-3xl rounded-full shadow-md transition"
+        >
+          &#8594;
+        </button>
+
+        <!-- Dots -->
+        <div class="flex justify-center gap-2 mt-4">
+          <button @click="slide = 1" class="w-3 h-3 rounded-full bg-white/30 hover:bg-white" :class="{ 'bg-white': slide === 1 }"></button>
+          <button @click="slide = 2" class="w-3 h-3 rounded-full bg-white/30 hover:bg-white" :class="{ 'bg-white': slide === 2 }"></button>
+          <button @click="slide = 3" class="w-3 h-3 rounded-full bg-white/30 hover:bg-white" :class="{ 'bg-white': slide === 3 }"></button>
+        </div>
+      </div>
+
+      <!-- Product Description -->
+      <h2 class="text-xl mt-6">Our Services</h2>
+     
+
+      <ul class="text-sm mt-4 list-disc list-inside space-y-1 text-yellow-300">
+        <li>Dynamic Event Listings</li>
+        <li>Seamless Booking System</li>
+        <li>Security & Safety</li>
+        <li>Event Design & Decor</li>
+        <li>Budget Management</li>
+      </ul>
+
+      <!-- Refund Section -->
+      <div class="mt-6 text-sm text-gray-400">
+        <p class="mt-4"><strong>Refunds:</strong> All sales are final. No refunds for digital products.Please review the product details and preview before proceeding with payment.</p>
+        <p class="mt-2">If you have further questions, please let us know at <a href="mailto:luxora@events.com" class="underline">lexora@events.com</a></p>
+      </div>
+    </div>
+
+    <!-- Right: Payment Form -->
+    <div class="w-full md:w-1/2 bg-white text-black p-6 rounded-lg shadow-lg" x-data="{ method: 'card' }">
+      
+      <!-- Payment Toggle -->
+      <div class="flex mb-2 border rounded overflow-hidden">
+        <button @click="method = 'card'" :class="method === 'card' ? 'bg-yellow-400' : 'bg-yellow-400'" class="w-1/2 py-2 text-center">Pay by Card</button>
+        <button @click="method = 'paypal'" :class="method === 'paypal' ? 'bg-yellow-400' : 'bg-yellow-400" class="w-1/2 py-2 text-center">Pay with PayPal</button>
+      </div>
+
+      <!-- Card Payment Form -->
+      <form x-show="method === 'card'" class="space-y-4">
+        <input type="email" placeholder="Email address" class="w-full p-3 border rounded-lg" required />
+        <input type="text" placeholder="Full name" class="w-full p-3 border rounded-lg" required />
+
+        <select class="w-full p-3 border rounded-lg">
+          <option disabled selected>Select your event</option>
+          <option>Birthday</option>
+          <option>Marriage</option>
+          <option>Seminar</option>
+          <option>Reception</option>
+          <option>Workshop</option>
+
+
+        </select>
+
+      <!-- Card Payment Form -->
+      <form x-show="method === 'card'" class="space-y-4">
+   
+        <input type="text" placeholder="Card number" class="w-full p-3 border rounded-lg" />
+        <div class="flex gap-3">
+          <input type="text" placeholder="MM / YY" class="w-1/2 p-3 border rounded-lg" />
+          <input type="text" placeholder="CVC" class="w-1/2 p-3 border rounded-lg" />
+        </div>
+        <select class="w-full p-3 border rounded-lg">
+          <option>India</option>
+          <option>United States</option>
+        </select>
+        <input type="text" placeholder="Postal Code" class="w-full p-3 border rounded-lg" />
+        <input type="text" placeholder="Tax ID number (optional)" class="w-full p-3 border rounded-lg" />
+        <input type="text" placeholder="Discount code" class="w-full p-3 border rounded-lg" />
+
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>Subtotal</span>
+          <span>₹49,999</span>
+        </div>
+        <div class="flex justify-between font-bold">
+          <span>Total</span>
+          <span>₹49,999</span>
+        </div>
+
+        <button type="submit" class="w-full bg-yellow-400 text-black py-3 rounded-lg hover:bg-yellow-700 transition">
+          Pay ₹49,999
+        </button>
+        <p class="text-xs text-center text-yellow-400 mt-2">Payments are secure and encrypted</p>
+      </form>
+
+      <!-- PayPal Form -->
+      <div x-show="method === 'paypal'" class="space-y-4">
+        <input type="email" placeholder="Email address" class="w-full p-3 border rounded-lg" />
+        <input type="text" placeholder="Full name" class="w-full p-3 border rounded-lg" />
+
+        <select class="w-full p-3 border rounded-lg">
+          <option disabled selected>Select your event</option>
+          <option>Birthday</option>
+          <option>Marriage</option>
+          <option>Seminar</option>
+          <option>Reception</option>
+          <option>Workshop</option>
+
+
+        </select>
+        <select class="w-full p-3 border rounded-lg">
+          <option>India</option>
+          <option>United States</option>
+        </select>
+        <input type="text" placeholder="Postal Code" class="w-full p-3 border rounded-lg" />
+        <input type="text" placeholder="Tax ID number (optional)" class="w-full p-3 border rounded-lg" />
+        <input type="text" placeholder="Discount code" class="w-full p-3 border rounded-lg" />
+
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>Subtotal</span>
+          <span>₹49,999</span>
+        </div>
+        <div class="flex justify-between font-bold">
+          <span>Total</span>
+          <span>₹49,999</span>
+        </div>
+
+        <button class="w-full bg-yellow-400 text-black py-3 rounded-lg hover:bg-yellow-500 transition">
+          PayPal
+        </button>
+        <p class="text-xs text-center text-gray-400 mt-2">Payments are secure and encrypted</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-mid">
+    <div class="footer-logo">
+      <h3><span class="highlight">Luxora</span></h3>
+      <p><a href="https://www.luxoraeventsglobal.com" target="_blank">www.luxoraeventsglobal.com</a></p>
+      <div class="social-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><img src="./img40.jpeg" alt="Facebook" /></a>
+          <a href="#"><img src="./img41.jpeg" alt="Twitter" /></a>
+          <a href="#"><img src="./img42.jpeg" alt="Instagram" /></a>
+          <a href="#"><img src="./img45.png" alt="youtube"/></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-links">
+      <h4>More From LuxoraEvents</h4>
+      <ul>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Invest</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Partnerships</a></li>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">Media Inquiries</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom text-yellow-400">
+    <p>&copy; 2025 EliteEventsGlobal. All rights reserved.</p>
+  </div>
+  
+  
+
+</body>
+</html>
